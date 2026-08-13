@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   amnezia_panel:
-    image: prvtpro/amnezia-panel:latest
+    image: alexandersapozhnikov/amnezia-panel:v1.5.1
     container_name: amnezia_panel
 
     ports:
