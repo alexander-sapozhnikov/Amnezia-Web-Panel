@@ -734,7 +734,7 @@ ENTRYPOINT [ "dumb-init", "/opt/amnezia/start.sh" ]
                 "Restart the Xray container manually and try again."
             )
         clients_node.append(client)
-        self._write_server_json(config, restart=False)
+        self._write_server_json(config, restart=True)
 
         # Update table
         clients_table = self._get_clients_table()
