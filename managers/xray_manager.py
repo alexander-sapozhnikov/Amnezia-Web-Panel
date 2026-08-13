@@ -400,9 +400,12 @@ ENTRYPOINT [ "dumb-init", "/opt/amnezia/start.sh" ]
         tag = self._get_vless_inbound_tag(config)
         if not tag:
             return False
+        inbound = self._get_vless_inbound(config)
+        port = inbound.get('port', 443) if inbound else 443
         payload = {
             "inbounds": [{
                 "tag": tag,
+                "port": port,
                 "protocol": "vless",
                 "settings": {
                     "clients": [client],
