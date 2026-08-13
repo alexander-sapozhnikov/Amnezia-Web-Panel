@@ -25,3 +25,8 @@ services:
 volumes:
   amnezia_data:
     external: true
+
+networks:
+  web-proxy:
+    external: true
+
