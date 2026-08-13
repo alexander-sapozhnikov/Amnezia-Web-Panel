@@ -5,11 +5,11 @@ services:
     image: alexandersapozhnikov/amnezia-panel:v1.5.1
     container_name: amnezia_panel
 
-    ports:
-      - "${APP_PORT:-5000}:5000"
+   # ports:
+   #   - "${APP_PORT:-5000}:5000"
 
     volumes:
-      - amnezia_data:/app/data
+      - amnezia_data:/app
 
     restart: unless-stopped
 
@@ -19,6 +19,9 @@ services:
       timeout: 10s
       retries: 3
       start_period: 40s
+    networks:
+      - web-proxy
 
 volumes:
   amnezia_data:
+    external: true
